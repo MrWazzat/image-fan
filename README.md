@@ -56,3 +56,5 @@ Attribute	| Default		| Description
 `maxSize`   | 1.5         | The new size of your image once hovered. A 1.5 factor will make your image 1.5 bigger when you hover it
 `animationSpeed` | 250 | The time in miliseconds that it takes for the animation to complete.
 
+<h3>Problems ?</h3>
+If you are experiencing some problems with the presets values, try changing the offset int the first place. If it is bigger than the image, they'll all be stacked on each other.
