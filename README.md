@@ -1,7 +1,11 @@
 # image-fan.js
 A JQuery plugin that allows you to make fans out of images. Also adds an animation when you hover the images.
 <h2>Getting Started</h2>
-To use <em>image-fan.js</em>, you have to download the plugin.
+To use <strong>image-fan.js</strong>, you have to
+<ul>
+    <li><a href="https://github.com/MrWazzat/image-fan/archive/master.zip">Download the plugin.</a></li>
+</ul>
+
 
 <h3>Examples</h3>
 
@@ -21,7 +25,7 @@ Just like this :
 
 <h2>JavaScript</h2>
 
-Then in your JavaScript file, you just have to apply the <em>imagefan()</em> function to your container block.
+Then in your JavaScript file, you just have to apply the <strong>imagefan()</strong> function to your container block.
 
 ```javascript
   $(".image-fan").imagefan();
