@@ -4,6 +4,10 @@
             angle: 90,
             offset: 120,
             border : "0px",
+            maxSize : 1.5,
+            animation: 'true',
+            animationSpeed : 250,
+            
             
         };
         var param = $.extend(defauts, options);
@@ -11,20 +15,20 @@
         return this.each(function () {
 
             //Nombre d'images
-            let nbImg = $("img", this).length;
+            var nbImg = $("img", this).length;
             //Taille moyenne pour une image
-            let tailleImg = $(this).width() / nbImg;
+            var tailleImg = $(this).width()/nbImg;
             //Différence d'angle entre deux images
-            let rotation = param.angle / nbImg;
+            var rotation = param.angle / nbImg;
             //Angle de début de rotation (première image)
-            let beginRot = -param.angle / 2 - rotation / 2;
+            var beginRot = -param.angle / 2 - rotation / 2;
             //Position la plus a gauche du bloc.
-            let positionX = $(this).position().left;
+            var positionX = $(this).position().left;
             //Position la plus en bas du bloc.
-            let positionY = 0;
+            var positionY = 0;
             console.log(positionY);
             //Centre du bloc 
-            let center = $(this).position().left + ($(this).width() / 2);
+            var center = $(this).position().left + ($(this).width() / 2);
 
             //Réajustage de la taille des images
             $("img", this).css({
@@ -59,20 +63,24 @@
             });
 
             //Transformation au survol de la souris
-            $("img", this).on("mouseover", function () {
+            if(param.animation){
+                $("img", this).on("mouseover", function () {
                 $(this).css({
                     'z-index': "100"
                 });
                 $(this).animate({
-                    width: 1.5*tailleImg
-                });
+                    width: param.maxSize*tailleImg
+                },param.animationSpeed);
             });
+            //Retour à la normale
             $("img", this).delay(500).on("mouseout", function () {
                 $(this).animate({
                     width: tailleImg,
                     'z-index': "10"
-                }, "fast");
+                }, param.animationSpeed, 'swing');
             });
+            }
+            
         });
     };
 })(jQuery);
