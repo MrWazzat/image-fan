@@ -2,7 +2,7 @@
     $.fn.imagefan = function (options) {
         var defauts = {
             angle: 90,
-            offset: 120,
+            offset: 100,
             border : "0px",
             maxSize : 1.5,
             animation: 'true',
@@ -34,7 +34,7 @@
             $("img", this).css({
                 width: tailleImg,
                 position: "absolute",
-                border: param.borders,
+                border: param.border,
                 'z-index' : "10",
             });
             $(this).css({
@@ -59,7 +59,7 @@
                     left: positionX + "px",
                     bottom: -positionY + "px"
                 });
-                positionX += (tailleImg - param.offset);
+                positionX += (tailleImg*param.offset /100);
             });
 
             //Transformation au survol de la souris
